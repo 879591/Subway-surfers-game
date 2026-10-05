@@ -1,6 +1,6 @@
 export type Language = 'en' | 'hi';
 export type GraphicsQuality = 'LOW' | 'MEDIUM' | 'HIGH';
-export type ScreenState = 'HOME' | 'PLAYING' | 'PAUSED' | 'GAMEOVER' | 'CHARACTERS' | 'MISSIONS' | 'SHOP' | 'SETTINGS' | 'BUILD_APK';
+export type ScreenState = 'HOME' | 'PLAYING' | 'PAUSED' | 'GAMEOVER' | 'CHARACTERS' | 'MISSIONS' | 'SHOP' | 'SETTINGS' | 'BUILD_APK' | 'ABOUT_DEV';
 
 export type PowerUpType = 'MAGNET' | 'SHIELD' | 'DOUBLE_SCORE' | 'SPEED_BOOST' | 'COIN_MULTIPLIER';
 

@@ -18,6 +18,7 @@ import {
   Flame,
   Globe,
   Home,
+  Info,
   Lock,
   Maximize2,
   Minimize2,
@@ -54,6 +55,7 @@ import { soundEngine } from './audio/SoundEngine';
 import { ActivePowerUpHUD, RunnerCanvas3D } from './scenes/RunnerCanvas3D';
 import { OfflineBanner, PWAInstallButton } from './ui/PWAInstallButton';
 import { BuildApkModal } from './ui/BuildApkModal';
+import { AboutDeveloperScreen } from './ui/AboutDeveloperScreen';
 
 const POWERUP_META: Record<
   PowerUpType,
@@ -445,8 +447,8 @@ export default function App() {
               <span>{lang === 'hi' ? 'खेलें (PLAY NOW)' : 'PLAY ADVENTURE'}</span>
             </button>
 
-            {/* 4 Main Action Buttons: CHARACTERS, MISSIONS, SHOP, SETTINGS */}
-            <div className="grid grid-cols-4 gap-2.5 bg-slate-950/85 backdrop-blur-md border border-white/15 p-2 rounded-2xl shadow-2xl">
+            {/* 5 Main Action Buttons: CHARACTERS, MISSIONS, SHOP, SETTINGS, ABOUT */}
+            <div className="grid grid-cols-5 gap-2 bg-slate-950/85 backdrop-blur-md border border-white/15 p-2 rounded-2xl shadow-2xl">
               <button
                 onClick={() => {
                   soundEngine.playButtonTap();
@@ -455,7 +457,7 @@ export default function App() {
                 className="min-h-[56px] rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/10 flex flex-col items-center justify-center gap-1 py-2 transition active:scale-95 cursor-pointer"
               >
                 <Users className="w-5 h-5 text-amber-400" />
-                <span className="text-[11px] font-bold text-slate-200 whitespace-nowrap">
+                <span className="text-[10px] sm:text-[11px] font-bold text-slate-200 whitespace-nowrap">
                   {lang === 'hi' ? 'किरदार' : 'CHARACTERS'}
                 </span>
               </button>
@@ -468,7 +470,7 @@ export default function App() {
                 className="relative min-h-[56px] rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/10 flex flex-col items-center justify-center gap-1 py-2 transition active:scale-95 cursor-pointer"
               >
                 <Target className="w-5 h-5 text-emerald-400" />
-                <span className="text-[11px] font-bold text-slate-200 whitespace-nowrap">
+                <span className="text-[10px] sm:text-[11px] font-bold text-slate-200 whitespace-nowrap">
                   {lang === 'hi' ? 'मिशन' : 'MISSIONS'}
                 </span>
                 {unclaimedMissionsCount > 0 && (
@@ -486,7 +488,7 @@ export default function App() {
                 className="min-h-[56px] rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/10 flex flex-col items-center justify-center gap-1 py-2 transition active:scale-95 cursor-pointer"
               >
                 <ShoppingBag className="w-5 h-5 text-sky-400" />
-                <span className="text-[11px] font-bold text-slate-200 whitespace-nowrap">
+                <span className="text-[10px] sm:text-[11px] font-bold text-slate-200 whitespace-nowrap">
                   {lang === 'hi' ? 'दुकान' : 'SHOP'}
                 </span>
               </button>
@@ -499,8 +501,21 @@ export default function App() {
                 className="min-h-[56px] rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/10 flex flex-col items-center justify-center gap-1 py-2 transition active:scale-95 cursor-pointer"
               >
                 <SettingsIcon className="w-5 h-5 text-purple-400" />
-                <span className="text-[11px] font-bold text-slate-200 whitespace-nowrap">
+                <span className="text-[10px] sm:text-[11px] font-bold text-slate-200 whitespace-nowrap">
                   {lang === 'hi' ? 'सेटिंग्स' : 'SETTINGS'}
+                </span>
+              </button>
+
+              <button
+                onClick={() => {
+                  soundEngine.playButtonTap();
+                  setScreenState('ABOUT_DEV');
+                }}
+                className="min-h-[56px] rounded-xl bg-slate-900 hover:bg-slate-800 border border-amber-500/30 flex flex-col items-center justify-center gap-1 py-2 transition active:scale-95 cursor-pointer"
+              >
+                <Info className="w-5 h-5 text-amber-400" />
+                <span className="text-[10px] sm:text-[11px] font-bold text-amber-300 whitespace-nowrap">
+                  {lang === 'hi' ? 'डेवलपर' : 'DEVELOPER'}
                 </span>
               </button>
             </div>
@@ -1389,9 +1404,28 @@ export default function App() {
                   </button>
                 </div>
               </div>
+
+              {/* About Developer Button inside Settings */}
+              <button
+                onClick={() => {
+                  soundEngine.playButtonTap();
+                  setScreenState('ABOUT_DEV');
+                }}
+                className="w-full min-h-[48px] rounded-2xl bg-slate-950 hover:bg-slate-800 border border-amber-500/40 text-amber-300 font-bold text-xs flex items-center justify-center gap-2 transition cursor-pointer"
+              >
+                <Info className="w-4 h-4 text-amber-400" />
+                <span>About Developer — Suraj Maurya (5tar Suraj)</span>
+              </button>
             </div>
           </div>
         </div>
+      )}
+
+      {/* =====================================================================
+          9B. ABOUT DEVELOPER SCREEN
+      ===================================================================== */}
+      {screenState === 'ABOUT_DEV' && (
+        <AboutDeveloperScreen onBack={() => setScreenState('HOME')} />
       )}
 
       {/* =====================================================================

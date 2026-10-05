@@ -531,7 +531,7 @@ export const RunnerCanvas3D: React.FC<RunnerCanvas3DProps> = ({
       }
 
       // Showcase / Menu camera vs Gameplay chase camera
-      if (stateRef.current === 'HOME' || stateRef.current === 'CHARACTERS' || stateRef.current === 'SHOP') {
+      if (stateRef.current === 'HOME' || stateRef.current === 'CHARACTERS' || stateRef.current === 'SHOP' || stateRef.current === 'ABOUT_DEV') {
         suraj.root.position.set(0, 0, 0);
         // Face camera in showcase mode
         const targetRotY =

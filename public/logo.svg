@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="800" height="220">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="45%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.75" />
+    </filter>
+  </defs>
+
+  <!-- Energetic Speed Wings -->
+  <path d="M35 110 L145 75 L125 110 L155 140 Z" fill="url(#goldGrad)" opacity="0.85" />
+  <path d="M765 110 L655 75 L675 110 L645 140 Z" fill="url(#goldGrad)" opacity="0.85" />
+
+  <!-- Glowing Star Emblem -->
+  <polygon points="400,12 418,52 462,57 429,87 438,130 400,108 362,130 371,87 338,57 382,52" fill="url(#goldGrad)" filter="url(#dropShadow)" />
+
+  <!-- Main Logo Text: 5TAR RUNNER -->
+  <g filter="url(#dropShadow)">
+    <text x="400" y="138" font-family="'Chakra Petch', sans-serif" font-size="88" font-weight="800" font-style="italic" text-anchor="middle" fill="url(#goldGrad)" stroke="#0F172A" stroke-width="8" paint-order="stroke" letter-spacing="4">
+      5TAR RUNNER
+    </text>
+  </g>
+
+  <!-- Subtitle Ribbon: SURAJ'S ADVENTURE -->
+  <rect x="230" y="156" width="340" height="44" rx="22" fill="#0F172A" stroke="#F59E0B" stroke-width="3" filter="url(#dropShadow)" />
+  <circle cx="258" cy="178" r="6" fill="#EF4444" />
+  <text x="400" y="185" font-family="'Plus Jakarta Sans', sans-serif" font-size="21" font-weight="800" text-anchor="middle" fill="#F8FAFC" letter-spacing="5">
+    SURAJ'S ADVENTURE
+  </text>
+  <circle cx="542" cy="178" r="6" fill="#EF4444" />
+</svg>

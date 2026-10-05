@@ -1,0 +1,6 @@
+{
+  "name": "5TAR RUNNER – Suraj's Adventure",
+  "description": "An original 3D Indian mobile endless-runner game featuring Suraj on an epic adventure across 6 dynamic Indian environments, with custom 3D character physics, procedural obstacles, missions, shop, offline PWA support, and Android APK build system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
